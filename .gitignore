@@ -1,0 +1,5 @@
+Makefile
+.ignore
+*.o
+*.exe
+*.sal

@@ -1,0 +1,46 @@
+Bienvenido al programa principal de Mercado FINGer. Por favor ingrese su comando:
+1> Carrito de productos creado de forma exitosa.
+2> El carrito de productos es vacio.
+3> Fecha creada en forma exitosa.
+4> Producto creado en forma exitosa.
+5> Producto agregado de forma exitosa.
+6> Fecha creada en forma exitosa.
+7> Producto creado en forma exitosa.
+8> Producto agregado de forma exitosa.
+9> Fecha creada en forma exitosa.
+10> Producto creado en forma exitosa.
+11> Producto agregado de forma exitosa.
+12> Producto con id 2 removido con exito.
+13> Producto: 1
+Sillon
+Precio: 3
+Ingresado el: 2/2/2002
+Producto: 50
+Parlante
+Precio: 11
+Ingresado el: 2/2/2006
+14> Fecha creada en forma exitosa.
+15> Producto creado en forma exitosa.
+16> Producto agregado de forma exitosa.
+17> El carrito de productos NO es vacio.
+18> Comando no reconocido.
+19> Comando no reconocido.
+20> Comando no reconocido.
+21> Comando no reconocido.
+22> Producto con id 1 removido con exito.
+23> Producto: 2
+MedioTanque
+Precio: 10
+Ingresado el: 4/3/2005
+Producto: 50
+Parlante
+Precio: 11
+Ingresado el: 2/2/2006
+24> Producto con id 2 removido con exito.
+25> El carrito de productos NO es vacio.
+26> Producto: 50
+Parlante
+Precio: 11
+Ingresado el: 2/2/2006
+27> Carrito de productos liberado con exito.
+28> Fin.

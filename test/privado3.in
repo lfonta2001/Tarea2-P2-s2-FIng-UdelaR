@@ -1,0 +1,26 @@
+crearCarritoProductos
+esVacioCarritoProductos
+crearFecha 2/2/2002
+crearProducto 1 Sillon 3
+agregarCarritoProductos
+crearFecha 4/3/2005
+crearProducto 2 MedioTanque 10
+agregarCarritoProductos
+crearFecha 2/2/2006
+crearProducto 50 Parlante 11
+agregarCarritoProductos
+removerDeCarritoProductos 2
+imprimirCarritoProductos
+crearFecha 4/3/2005
+crearProducto 2 MedioTanque 10
+agregarCarritoProductos
+esVacioCarritoProductos
+obtenerPiezaColeccionPiezas 1
+obtenerPiezaColeccionPiezas 2
+removerDeCarritoProductos 1
+imprimirCarritoProductos
+removerDeCarritoProductos 2
+esVacioCarritoProductos
+imprimirCarritoProductos
+liberarCarritoProductos
+Fin

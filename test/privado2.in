@@ -1,0 +1,11 @@
+crearCliente 100 Juan Martinez 30
+imprimirCliente
+imprimirEdadCliente
+imprimirIdCliente
+copiarCliente
+imprimirCliente
+liberarCliente
+crearCliente 20 Aureliano Gomez 29
+imprimirNombreYApellidoCliente
+liberarCliente
+Fin

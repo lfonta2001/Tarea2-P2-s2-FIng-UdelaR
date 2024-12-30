@@ -1,0 +1,62 @@
+Bienvenido al programa principal de Mercado FINGer. Por favor ingrese su comando:
+1> El clientesABB ha sido creado de forma exitosa.
+2> Comando no reconocido.
+3> La altura del clientesABB es 0.
+4> ClientesABB liberado con exito.
+5> El clientesABB ha sido creado de forma exitosa.
+6> Cliente creado de forma exitosa.
+7> La altura del clientesABB es 0.
+8> Se ha agregado el cliente al clientesABB de forma exitosa.
+9> El cliente con id 10 pertenece al clientesABB.
+10> El cliente con id 10 se removio del clientesABB.
+11> El cliente con id 10 NO pertenece al clientesABB.
+12> Cliente creado de forma exitosa.
+13> Se ha agregado el cliente al clientesABB de forma exitosa.
+14> Cliente creado de forma exitosa.
+15> Se ha agregado el cliente al clientesABB de forma exitosa.
+16> Cliente creado de forma exitosa.
+17> Se ha agregado el cliente al clientesABB de forma exitosa.
+18> El mayor id en el clientesABB es 20.
+19> Cliente creado de forma exitosa.
+20> Se ha agregado el cliente al clientesABB de forma exitosa.
+21> Cliente creado de forma exitosa.
+22> Se ha agregado el cliente al clientesABB de forma exitosa.
+23> La altura del clientesABB es 4.
+24> Cliente creado de forma exitosa.
+25> Se ha agregado el cliente al clientesABB de forma exitosa.
+26> Cliente nro 3 del clientesABB:
+Cliente Casimira Ruiz
+Id: 20
+Edad: 22
+27> Cliente creado de forma exitosa.
+28> Se ha agregado el cliente al clientesABB de forma exitosa.
+29> La cantidad de clientes en el clientesABB es 7.
+30> Cliente creado de forma exitosa.
+31> Se ha agregado el cliente al clientesABB de forma exitosa.
+32> Cliente creado de forma exitosa.
+33> Se ha agregado el cliente al clientesABB de forma exitosa.
+34> Cliente creado de forma exitosa.
+35> Se ha agregado el cliente al clientesABB de forma exitosa.
+36> Cliente creado de forma exitosa.
+37> Se ha agregado el cliente al clientesABB de forma exitosa.
+38> Cliente creado de forma exitosa.
+39> Se ha agregado el cliente al clientesABB de forma exitosa.
+40> La cantidad de clientes en el clientesABB es 12.
+41> La altura del clientesABB es 7.
+42> El cliente con id 6 pertenece al clientesABB.
+43> El cliente con id 31 pertenece al clientesABB.
+44> El cliente con id 2 NO pertenece al clientesABB.
+45> El cliente con id 18 NO pertenece al clientesABB.
+46> El mayor id en el clientesABB es 40.
+47> La edad promedio del clientesABB es 25.25.
+48> El cliente con id 30 se removio del clientesABB.
+49> El cliente con id 8 se removio del clientesABB.
+50> El cliente con id 31 se removio del clientesABB.
+51> El cliente con id 24 se removio del clientesABB.
+52> La altura del clientesABB es 4.
+53> El cliente con id 6 pertenece al clientesABB.
+54> El cliente con id 31 NO pertenece al clientesABB.
+55> El mayor id en el clientesABB es 40.
+56> La edad promedio del clientesABB es 27.25.
+57> ClientesABB liberado con exito.
+58> Fin.
