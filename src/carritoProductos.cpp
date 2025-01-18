@@ -12,128 +12,96 @@ TCarritoProductos crearCarritoProductosVacio(){
 }
 
 void insertarProductoCarritoProductos(TCarritoProductos &carritoProductos, TProducto producto){
+    int idProd = idTProducto(producto);
+
     if (esVacioCarritoProductos(carritoProductos)) {
+        carritoProductos = new rep_carritoProductos;
         carritoProductos->producto = producto;
         carritoProductos->sig = NULL;
     } else {
-        int idProd, idCarro;
-        idProd = idTProducto(producto);
-        idCarro = idTProducto(carritoProductos->producto);
-        if (!existeProductoCarritoProductos(carritoProductos, idProd)) {
-            TCarritoProductos temp1, temp2;
-            temp1 = carritoProductos;
-            
-            if (idProd < idCarro) {
-                carritoProductos->producto = producto;
-                carritoProductos->sig = temp1;
-            } else {
-                idCarro = idTProducto(temp1->sig->producto);
-                while (temp1->sig != NULL && idProd > idCarro) {
-                    temp1 = temp1->sig;
-                    idCarro = idTProducto(temp1->sig->producto);
-                }
+            TCarritoProductos temp = carritoProductos, nuevoNodo;
 
-                if (temp1->sig == NULL) {
-                    temp1->sig->producto == producto;
-                    temp1->sig->sig == NULL;
-                } else {
-                    temp2 = temp1->sig;
-                    temp1->producto = producto;
-                    temp1->sig = temp2;
+            nuevoNodo = new rep_carritoProductos;
+            nuevoNodo->producto = producto;
+            nuevoNodo->sig = NULL;
+            
+            if (idProd < idTProducto(carritoProductos->producto)) {
+                nuevoNodo->sig = carritoProductos;
+                carritoProductos = nuevoNodo;
+            } else {
+                while (temp->sig != NULL && idProd > idTProducto(temp->sig->producto)) {
+                    temp = temp->sig;
                 }
+                nuevoNodo->sig = temp->sig;
+                temp->sig = nuevoNodo;
             }
         }
     }
-}
 
-void imprimirCarritoProductos(TCarritoProductos carritoProductos){
-    if(!esVacioCarritoProductos(carritoProductos)) {
-        TCarritoProductos temp1 = carritoProductos;
 
-        while (temp1 != NULL) {
-            imprimirTProducto(temp1->producto);
-            temp1 = temp1->sig;
-        }
+void imprimirCarritoProductos(TCarritoProductos carritoProductos) {
+    if(esVacioCarritoProductos(carritoProductos)) return;
+    TCarritoProductos temp1 = carritoProductos;
+
+    while (temp1 != NULL) {
+        imprimirTProducto(temp1->producto);
+        temp1 = temp1->sig;
     }
 }
 
-void liberarCarritoProductos(TCarritoProductos &carritoProductos){
-    TCarritoProductos temp = carritoProductos;
+void liberarCarritoProductos(TCarritoProductos &carritoProductos) {
+    TCarritoProductos temp;
 
     while (carritoProductos != NULL) {
+        temp = carritoProductos;
         carritoProductos = carritoProductos->sig;
         liberarTProducto(temp->producto);
         delete temp;
-        temp = carritoProductos;
     }
-    delete temp;
-    delete carritoProductos;
+
     carritoProductos = NULL;
 }
 
-bool esVacioCarritoProductos(TCarritoProductos carritoProductos){
-    bool vacio = carritoProductos == NULL;
-    return vacio;
+bool esVacioCarritoProductos(TCarritoProductos carritoProductos) {
+    return (carritoProductos == NULL);
 }
 
 bool existeProductoCarritoProductos(TCarritoProductos carritoProductos, int idProducto){
-    TCarritoProductos temp;
-    temp = carritoProductos;
-    int idCarro = idTProducto(temp->producto);
-    while (temp != NULL && idProducto != idCarro) {
-        temp = temp->sig;
-        idCarro = idTProducto(temp->producto);
+    while (carritoProductos != NULL) {
+        if (idTProducto(carritoProductos->producto) == idProducto) {
+            return true;
+        }
+        carritoProductos = carritoProductos->sig;
     }
-    return temp != NULL;
+    return false;
 }
 
 TProducto obtenerProductoCarritoProductos(TCarritoProductos carritoProductos, int idProducto){
-    TProducto prod;
-    if(existeProductoCarritoProductos(carritoProductos, idProducto)) {
-        TCarritoProductos temp = carritoProductos;
-        int idCarro = idTProducto(temp->producto);
+    int idCarro = idTProducto(carritoProductos->producto);
 
-        while (temp != NULL && idProducto != idCarro) {
-            temp = temp->sig;
-            idCarro = idTProducto(temp->producto);
-        }
-        
-        prod = temp->producto;
+    while (carritoProductos != NULL && idProducto != idCarro) {
+        carritoProductos = carritoProductos->sig;
+        idCarro = idTProducto(carritoProductos->producto);
     }
-    return prod;
+    return carritoProductos->producto;
 }
 
-void removerProductoCarritoProductos(TCarritoProductos &carritoProductos, int idProducto){
-    if(existeProductoCarritoProductos(carritoProductos, idProducto)) {
-        TCarritoProductos temp1, temp2, temp3;
-        temp1 = carritoProductos;
-        int idCarro = idTProducto(temp1->producto);
-        bool encontrado = idProducto == idCarro;
+void removerProductoCarritoProductos(TCarritoProductos &carritoProductos, int idProducto) {
+    TCarritoProductos temp = carritoProductos, anterior = NULL;
 
-        if (encontrado) {
-            temp1 = carritoProductos;
-            carritoProductos = carritoProductos->sig;
-            liberarTProducto(temp1->producto);
-            delete temp1;
+    while (temp != NULL && idTProducto(temp->producto) != idProducto) {
+        anterior = temp;
+        temp = temp->sig;
+    }
+
+    if (temp != NULL) {
+        if (anterior == NULL) {
+            carritoProductos = temp->sig;
         } else {
-            idCarro = idTProducto(temp1->sig->producto);
-            encontrado = idProducto == idCarro;
-            while (temp1->sig != NULL && !encontrado) {
-                temp1 = temp1->sig;
-                idCarro = idTProducto(temp1->sig->producto);
-                encontrado = idProducto == idCarro;
-            }
-
-            if (temp1->sig == NULL) {
-                liberarTProducto(temp1->sig->producto);
-                delete temp1;
-            } else {
-                temp2 = temp1->sig;
-                temp3 = temp2->sig;
-                temp1->sig = temp3;
-                liberarTProducto(temp2->producto);
-                delete temp2;
-            }
+            anterior->sig = temp->sig;
         }
+
+        liberarTProducto(temp->producto);
+        delete temp;
     }
 }
