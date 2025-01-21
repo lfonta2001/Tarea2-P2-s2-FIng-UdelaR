@@ -7,8 +7,7 @@ struct rep_carritoProductos{
 
 
 TCarritoProductos crearCarritoProductosVacio(){
-    TCarritoProductos carrito = NULL;
-    return carrito;
+    return NULL;
 }
 
 void insertarProductoCarritoProductos(TCarritoProductos &carritoProductos, TProducto producto){
@@ -19,24 +18,24 @@ void insertarProductoCarritoProductos(TCarritoProductos &carritoProductos, TProd
         carritoProductos->producto = producto;
         carritoProductos->sig = NULL;
     } else {
-            TCarritoProductos temp = carritoProductos, nuevoNodo;
+        TCarritoProductos temp = carritoProductos, nuevoNodo;
 
-            nuevoNodo = new rep_carritoProductos;
-            nuevoNodo->producto = producto;
-            nuevoNodo->sig = NULL;
-            
-            if (idProd < idTProducto(carritoProductos->producto)) {
-                nuevoNodo->sig = carritoProductos;
-                carritoProductos = nuevoNodo;
-            } else {
-                while (temp->sig != NULL && idProd > idTProducto(temp->sig->producto)) {
-                    temp = temp->sig;
-                }
-                nuevoNodo->sig = temp->sig;
-                temp->sig = nuevoNodo;
+        nuevoNodo = new rep_carritoProductos;
+        nuevoNodo->producto = producto;
+        nuevoNodo->sig = NULL;
+        
+        if (idProd < idTProducto(carritoProductos->producto)) {
+            nuevoNodo->sig = carritoProductos;
+            carritoProductos = nuevoNodo;
+        } else {
+            while (temp->sig != NULL && idProd > idTProducto(temp->sig->producto)) {
+                temp = temp->sig;
             }
+            nuevoNodo->sig = temp->sig;
+            temp->sig = nuevoNodo;
         }
     }
+}
 
 
 void imprimirCarritoProductos(TCarritoProductos carritoProductos) {
