@@ -156,7 +156,7 @@ float edadPromedioTClientesABB(TClientesABB clientesABB){
 
 TCliente obtenerNesimoClienteAux(TClientesABB clientesABB, int n, int &indiceActual) {
     if (clientesABB == NULL) return NULL;
-    TCliente resultado = obtenerNesimoClienteAux(clientesABB, n, indiceActual);
+    TCliente resultado = obtenerNesimoClienteAux(clientesABB->izquierda, n, indiceActual);
     if (resultado != NULL) {
         return resultado;
     }
