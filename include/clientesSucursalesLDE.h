@@ -11,6 +11,7 @@
 
 #include "clientesABB.h"
 
+typedef struct rep_nodoClientesSucursalesLDE * nodoClientesSucursalesLDE;
 // Define el tipo TClientesSucursalesLDE como un puntero a rep_clientesSucursalesLDE
 typedef struct rep_clientesSucursalesLDE *TClientesSucursalesLDE;
 
