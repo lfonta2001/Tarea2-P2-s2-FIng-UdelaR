@@ -4,4 +4,4 @@ Makefile
 *.exe
 *.sal
 .vscode
-*.py
+*.diff
